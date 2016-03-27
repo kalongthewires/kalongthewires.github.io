@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+
+<body>
+
+	<dl>
+		<dt>Days until Thailand:</dt>
+		<dd id="daysUntilThailand"></dd>
+	</dl>
+
+</body>
+
+<script type="text/javascript">
+
+	function DateCountdown (options) {
+		this.element = document.querySelector(options.element);
+		this.endDate = options.endDate;
+
+		this.displayRemainingDays();
+	}
+
+	DateCountdown.prototype = {
+		constructor: DateCountdown,
+		calculateRemainingDays: function () {
+			var today = new Date(),
+				millisPerDay = 24 * 60 * 60 * 1000;
+
+			return Math.round(Math.abs((today - this.endDate) / millisPerDay));
+		},
+		displayRemainingDays: function () {
+			var days = this.calculateRemainingDays();
+
+			days = document.createTextNode(days)
+			this.element.appendChild(days);
+		}
+	};
+
+	new DateCountdown({
+		endDate: new Date(2016, 6, 25),
+		element: '#daysUntilThailand'
+	});
+
+</script>
+
+</html>
