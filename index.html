@@ -9,6 +9,13 @@
 
 <body>
 
+	<nav id="navigation-menu">
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/quotes">Reading</a></li>
+		</ul>
+	</nav>
+
 	<dl>
 		<dt>Days until Thailand:</dt>
 		<dd id="daysUntilThailand"></dd>
@@ -18,10 +25,12 @@
 
 <script src="js/DateCountdown.js"></script>
 <script>
-	new DateCountdown({
+	var countdown = new DateCountdown({
 		endDate: new Date(2016, 6, 25),
 		element: '#daysUntilThailand'
 	});
+
+	countdown.init();
 </script>
 
 </html>
