@@ -1,0 +1,11 @@
+---
+layout: layout.html
+title: media log
+eleventyNavigation:
+  key: media log
+---
+
+{% for medium in collections.media %} 
+  {{ medium.page.date | date: '%b %d, %Y', 'UCT' }} 
+  {{ medium.content }} 
+{% endfor %}
