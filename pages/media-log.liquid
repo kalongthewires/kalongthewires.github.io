@@ -5,7 +5,16 @@ eleventyNavigation:
   key: media log
 ---
 
-{% for medium in collections.media %} 
-  {{ medium.page.date | date: '%b %d, %Y', 'UCT' }} 
-  {{ medium.content }} 
+
+<ul>
+
+{% for medium in collections.media %}
+  {{ medium.page.date | date: "%B", 'UCT' }}
+  
+  <li>
+    {{ medium.data.name }} ({{ medium.data.type }}) {% if medium.data.creator %}- {{ medium.data.creator }}{% endif %}
+  </li>
 {% endfor %}
+
+</ul>
+
