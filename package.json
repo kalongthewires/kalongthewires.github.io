@@ -1,0 +1,12 @@
+{
+  "name": "starting-somewhere",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve"
+  }
+}
