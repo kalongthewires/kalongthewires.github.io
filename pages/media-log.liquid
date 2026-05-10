@@ -5,16 +5,20 @@ eleventyNavigation:
   key: media log
 ---
 
+{% assign media = collections.media | group_by_exp: "item", "item.page.date | date: '%B'" | reverse %}
 
-<ul>
+<ol>
+{% for month in media %}
+  {{ month.name }}
 
-{% for medium in collections.media %}
-  {{ medium.page.date | date: "%B", 'UCT' }}
-  
-  <li>
-    {{ medium.data.name }} ({{ medium.data.type }}) {% if medium.data.creator %}- {{ medium.data.creator }}{% endif %}
-  </li>
+  <ol>
+  {% for medium in month.items %}
+    <li>
+      {{ medium.data.name }} ({{ medium.data.type }}) {% if medium.data.creator %}- {{ medium.data.creator }}{% endif %}
+    </li>
+  {% endfor %}
+  </ol>
 {% endfor %}
 
-</ul>
+</ol>
 
