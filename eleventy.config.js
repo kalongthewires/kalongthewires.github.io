@@ -1,25 +1,37 @@
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 
-// TODO: Handle year
-
 const groupByMonth = (values) => {
-  const grouped = values.reduce((acc, item) => {
-    const displayMonth = item.page.date.toLocaleString("default", {
+  const grouped = values.reduce((years, value) => {
+    const displayMonth = value.page.date.toLocaleString("default", {
       month: "long",
     });
-    const date = item.page.date.getTime();
+    const month = value.page.date.getMonth();
+    const year = value.page.date.getFullYear();
+
+    const existingYear = years.find(
+      (existingYear) => existingYear.name === year,
+    );
+    const existingMonths = existingYear?.months;
+    const existingItems = existingMonths?.find(
+      (existingMonth) => existingMonth.monthNumeric === month,
+    )?.items;
 
     return [
-      ...(acc.filter((group) => group.date !== date) || []),
+      ...(years?.filter((existingYear) => existingYear.name !== year) || []),
       {
-        name: displayMonth,
-        date,
-        items: [
-          ...(acc.find((group) => group.date === date)?.items || []),
-          item,
+        name: year,
+        months: [
+          ...(existingMonths?.filter(
+            (existingMonth) => existingMonth.monthNumeric !== month,
+          ) || []),
+          {
+            name: displayMonth,
+            monthNumeric: month,
+            items: [...(existingItems || []), value],
+          },
         ],
       },
-    ].sort((a, b) => b.date - a.date);
+    ].sort((a, b) => b.name - a.name);
   }, []);
 
   return grouped;
