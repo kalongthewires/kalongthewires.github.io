@@ -1,0 +1,19 @@
+---
+layout: layout.njk
+title: media log
+eleventyNavigation:
+  key: media log
+---
+
+<ol>
+{% for month in collections.media | groupByMonth %}
+  <li>{{ month.name }}
+    <ol>
+    {% for item in month.items %}
+      <li>{{ item.data.name }} ({{ item.data.type }}) - {%if item.data.creator %}{{ item.data.creator }}{% endif %}</li>
+    {% endfor %}
+    </ol>
+  </li>
+{% endfor %}
+</ol>
+
