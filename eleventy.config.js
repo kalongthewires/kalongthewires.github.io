@@ -38,7 +38,5 @@ const groupByMonth = (values) => {
 };
 
 export default function (eleventyConfig) {
-  eleventyConfig.addPlugin(eleventyNavigationPlugin);
-
   eleventyConfig.addFilter("groupByMonth", groupByMonth);
 }
