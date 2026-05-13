@@ -1,6 +1,29 @@
 ---
 layout: layout.njk
-title: starting somewhere !
+title: starting somewhere
 ---
 
-{{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
+<h2>media log</h2>
+
+<ol>
+{% for year in collections.media | groupByMonth %}
+  <li>{{ year.name }}
+    
+    <ol>
+    {% for month in year.months %}
+      <li>{{ month.name }}
+
+        <ol>
+    {% for item in month.items %}
+          <li>{{ item.data.name }} ({{ item.data.type }}) - {%if item.data.creator %}{{ item.data.creator }}{% endif %}</li>
+    {% endfor %}
+        </ol>
+        
+      </li>
+    {% endfor %}
+    </ol>
+
+  </li>
+{% endfor %}
+</ol>
+
