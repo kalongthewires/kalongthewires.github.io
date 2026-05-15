@@ -1,5 +1,3 @@
-import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
-
 const groupByMonth = (values) => {
   const grouped = values.reduce((years, value) => {
     const displayMonth = value.page.date.toLocaleString("default", {
