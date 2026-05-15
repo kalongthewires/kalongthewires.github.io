@@ -37,5 +37,6 @@ const groupByMonth = (values) => {
 
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("bundle.css");
+  eleventyConfig.addPassthroughCopy("pixels.css");
   eleventyConfig.addFilter("groupByMonth", groupByMonth);
 }

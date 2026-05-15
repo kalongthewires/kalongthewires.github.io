@@ -1,3 +1,5 @@
+@import "./pixels.css";
+
 body {
   --color-white: #fefefe;
   --color-black: #000000;
@@ -137,6 +139,28 @@ ul {
   padding-inline-start: 3rem;
 }
 
+.ms-8 {
+  margin-inline-start: 0.5rem;
+}
+.ms-16 {
+  margin-inline-start: 1rem;
+}
+.ms-24 {
+  margin-inline-start: 1.5rem;
+}
+.ms-32 {
+  margin-inline-start: 2rem;
+}
+.ms-48 {
+  margin-inline-start: 3rem;
+}
+.ms-64 {
+  margin-inline-start: 4rem;
+}
+.ms-80 {
+  margin-inline-start: 5rem;
+}
+
 .pe-8 {
   padding-inline-end: 0.5rem;
 }
@@ -186,4 +210,12 @@ ul {
 
 .border {
   border: 1px solid #e5e7eb;
+}
+
+.flex {
+  display: flex;
+}
+
+.relative {
+  position: relative;
 }

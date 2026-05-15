@@ -13,11 +13,17 @@
     />
   </head>
   <body class="font-sans font-normal">
-    <div class="container mx-auto border bg-white mt-24">
-      <header class="border-b px-24">
-        <h1 class="text-2xl font-semibold">{{ title }}</h1>
+    <div class="container mx-auto border bg-white mt-24 relative">
+      <header class="border-b px-24 relative">
+        <div class="pixel-container">
+          <div class="pixels"></div>
+        </div>
+        <h1 class="text-2xl ms-64 font-semibold">{{ title }}</h1>
       </header>
       <main class="px-24 pb-16">{{ content | safe }}</main>
+      <div class="pixel-container-bottom">
+        <div class="pixels"></div>
+      </div>
     </div>
   </body>
 </html>
