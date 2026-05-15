@@ -3,17 +3,16 @@ layout: layout.njk
 title: starting somewhere
 ---
 
-<h2>media log</h2>
+<h2 class="font-semibold">media log</h2>
 
-<ol>
 {% for year in collections.media | groupByMonth %}
-  <li>{{ year.name }}
+  <h3 class="font-semibold mb-16">{{ year.name }}</h3>
     
     <ol>
     {% for month in year.months %}
       <li>{{ month.name }}
 
-        <ol>
+        <ol class="pt-16 list-decimal">
     {% for item in month.items %}
           <li>{{ item.data.name }} ({{ item.data.type }}) - {%if item.data.creator %}{{ item.data.creator }}{% endif %}</li>
     {% endfor %}
@@ -25,5 +24,4 @@ title: starting somewhere
 
   </li>
 {% endfor %}
-</ol>
 
