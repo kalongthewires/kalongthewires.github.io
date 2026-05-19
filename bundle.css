@@ -1,9 +1,11 @@
 @import "./pixels.css";
 
-body {
+:root {
   --color-white: #fefefe;
   --color-black: #000000;
+}
 
+body {
   background-color: #2a5aba;
 }
 
@@ -226,4 +228,8 @@ ul {
 
 .relative {
   position: relative;
+}
+
+.absolute {
+  position: absolute;
 }
