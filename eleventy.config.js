@@ -38,5 +38,15 @@ const groupByMonth = (values) => {
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("bundle.css");
   eleventyConfig.addPassthroughCopy("pixels.css");
+
+  eleventyConfig.addFilter("postDate", (date) => {
+    return date.toLocaleString("en-US", {
+      timeZone: "UTC",
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    });
+  });
+
   eleventyConfig.addFilter("groupByMonth", groupByMonth);
 }

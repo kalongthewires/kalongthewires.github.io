@@ -3,7 +3,13 @@ layout: layout.njk
 title: starting somewhere
 ---
 
-<h2 class="font-semibold">media log</h2>
+{% for post in collections.posts %}
+  <h2>{{ post.data.title }}</h2>
+  <time datetime="{{ post.date.toISOString() }}">{{ post.date | postDate }}</time>
+  {{ post.content | safe }}
+{% endfor %}
+
+<h2 class="font-semibold border-t pt-24 mt-24">media log</h2>
 
 {% for year in collections.media | groupByMonth %}
   <h3 class="font-semibold mb-16">{{ year.name }}</h3>
