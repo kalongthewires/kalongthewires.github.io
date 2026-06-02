@@ -1,0 +1,104 @@
+[
+  {
+    "name": "Brigands & Breadknives",
+    "creator": "Travis Baldree",
+    "type": "book",
+    "date": "2026-01-09"
+  },
+  {
+    "name": "Snake-Eater",
+    "creator": "T. Kingfisher",
+    "type": "book",
+    "date": "2026-02-14"
+  },
+  {
+    "name": "The Everlasting",
+    "creator": "Alix E. Harrow",
+    "type": "book",
+    "date": "2026-01-23"
+  },
+  {
+    "name": "The Wedding People",
+    "creator": "Alison Espach",
+    "type": "book",
+    "date": "2026-02-26"
+  },
+  {
+    "name": "The Ministry of Time",
+    "creator": "Kaliane Bradley",
+    "type": "book",
+    "date": "2026-03-15"
+  },
+  {
+    "name": "With Her Own Hands: Women Weaving Their Stories",
+    "creator": "Nicole Nehrig",
+    "type": "book",
+    "date": "2026-03-26"
+  },
+  {
+    "name": "Katabasis",
+    "creator": "R.F. Kuang",
+    "type": "book",
+    "date": "2026-04-09"
+  },
+  {
+    "name": "Babel",
+    "creator": "R.F. Kuang",
+    "type": "book",
+    "date": "2026-05-16"
+  },
+  {
+    "name": "The Correspondent",
+    "creator": "Virginia Evans",
+    "type": "book",
+    "date": "2026-05-23"
+  },
+  {
+    "name": "The Creative Act: A Way of Being",
+    "creator": "Rick Rubin",
+    "type": "book",
+    "date": "2026-05-28"
+  },
+  {
+    "name": "Patchwork: A Sewist's Diary",
+    "creator": "Maddie Ballard",
+    "type": "book",
+    "date": "2026-05-27"
+  },
+  {
+    "name": "Star Wars: The Mandelorian and Grogu",
+    "creator": "Jon Favreau",
+    "type": "film",
+    "date": "2026-05-30"
+  },
+  {
+    "name": "Sentimental Value",
+    "creator": "Joachim Trier",
+    "type": "film",
+    "date": "2026-05-24"
+  },
+  {
+    "name": "Good Luck, Have Fun, Don't Die",
+    "creator": "Gore Verbinski",
+    "type": "film",
+    "date": "2026-04-25"
+  },
+  {
+    "name": "John Wick: Chapter 4",
+    "creator": "Chad Stahelski",
+    "type": "film",
+    "date": "2026-04-19"
+  },
+  {
+    "name": "The First Monday in May",
+    "creator": "Andrew Rossi",
+    "type": "film",
+    "date": "2026-02-25"
+  },
+  {
+    "name": "Good Fortune",
+    "creator": "Aziz Ansari",
+    "type": "film",
+    "date": "2026-02-22"
+  }
+]

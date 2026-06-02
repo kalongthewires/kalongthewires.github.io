@@ -1,13 +1,15 @@
 const groupByMonth = (values) => {
   const grouped = values.reduce((years, value) => {
-    const displayMonth = value.page.date.toLocaleString("default", {
+    const date = new Date(value.date);
+    console.log({ date });
+    const displayMonth = date.toLocaleString("default", {
       month: "long",
     });
-    const month = value.page.date.getMonth();
-    const year = value.page.date.getFullYear();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
 
     const existingYear = years.find(
-      (existingYear) => existingYear.name === year,
+      (existingYear) => existingYear.year === year,
     );
     const existingMonths = existingYear?.months;
     const existingItems = existingMonths?.find(
@@ -15,24 +17,29 @@ const groupByMonth = (values) => {
     )?.items;
 
     return [
-      ...(years?.filter((existingYear) => existingYear.name !== year) || []),
+      ...(years?.filter((existingYear) => existingYear.year !== year) || []),
       {
-        name: year,
+        year,
         months: [
           ...(existingMonths?.filter(
             (existingMonth) => existingMonth.monthNumeric !== month,
           ) || []),
           {
-            name: displayMonth,
+            month: displayMonth,
             monthNumeric: month,
             items: [...(existingItems || []), value],
           },
         ],
       },
-    ].sort((a, b) => b.name - a.name);
+    ];
   }, []);
 
-  return grouped;
+  return grouped
+    .map((group) => ({
+      ...group,
+      months: group.months.sort((a, b) => b.monthNumeric - a.monthNumeric),
+    }))
+    .sort((a, b) => b.year - a.year);
 };
 
 export default function (eleventyConfig) {

@@ -1,33 +1,20 @@
 ---
 layout: layout.njk
-title: starting somewhere
+title: media log
 ---
 
-{% for post in collections.posts %}
-  <h2>{{ post.data.title }}</h2>
-  <time datetime="{{ post.date.toISOString() }}">{{ post.date | postDate }}</time>
-  {{ post.content | safe }}
-{% endfor %}
-
-<h2 class="font-semibold border-t pt-24 mt-24">media log</h2>
-
-{% for year in collections.media | groupByMonth %}
-  <h3 class="font-semibold mb-16">{{ year.name }}</h3>
+{% for year in media | groupByMonth %}
+  <h2 class="font-semibold mb-16">{{ year.year }}</h2>
     
-    <ol>
-    {% for month in year.months %}
-      <li>{{ month.name }}
+  {% for month in year.months %}
+    <h3 class="mt-32">{{ month.month }}</h3>
 
-        <ol class="pt-16 list-decimal">
-    {% for item in month.items %}
-          <li>{{ item.data.name }} ({{ item.data.type }}) - {%if item.data.creator %}{{ item.data.creator }}{% endif %}</li>
-    {% endfor %}
-        </ol>
-        
-      </li>
-    {% endfor %}
-    </ol>
+    <ol class="pt-16 list-decimal text-base">
+      {% for item in month.items %}
+      <li>{{ item.name }} {%if item.creator %} - {{ item.creator }}{% endif %} ({{ item.type }})</li>
+      {% endfor %}
+    </ol>      
+  {% endfor %}
 
-  </li>
 {% endfor %}
 
