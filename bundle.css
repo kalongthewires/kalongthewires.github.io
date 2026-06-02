@@ -7,10 +7,16 @@
 
 body {
   background-color: #2a5aba;
+  line-height: 1.5;
 }
 
-p {
-  line-height: 1.5;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
 
 .bg-white {
@@ -207,6 +213,27 @@ ul {
 .px-48 {
   padding-inline-start: 3rem;
   padding-inline-end: 3rem;
+}
+
+.py-8 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.py-16 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.py-24 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.py-32 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.py-48 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .container {

@@ -9,7 +9,7 @@ title: media log
   {% for month in year.months %}
     <h3 class="mt-32">{{ month.month }}</h3>
 
-    <ol class="pt-16 list-decimal text-base">
+    <ol class="list-decimal">
       {% for item in month.items %}
       <li>{{ item.name }} {%if item.creator %} - {{ item.creator }}{% endif %} ({{ item.type }})</li>
       {% endfor %}
