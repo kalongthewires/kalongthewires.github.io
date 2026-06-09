@@ -1,7 +1,6 @@
 const groupByMonth = (values) => {
   const grouped = values.reduce((years, value) => {
     const date = new Date(value.date);
-    console.log({ date });
     const displayMonth = date.toLocaleString("default", {
       month: "long",
     });
@@ -38,6 +37,13 @@ const groupByMonth = (values) => {
     .map((group) => ({
       ...group,
       months: group.months.sort((a, b) => b.monthNumeric - a.monthNumeric),
+    }))
+    .map((group) => ({
+      ...group,
+      months: group.months.map((month) => ({
+        ...month,
+        items: month.items.sort((a, b) => new Date(a.date) - new Date(b.date)),
+      })),
     }))
     .sort((a, b) => b.year - a.year);
 };
