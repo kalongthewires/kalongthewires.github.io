@@ -26,11 +26,9 @@
           {% set navPages = collections.all | eleventyNavigation %}
           <ul class="flex gap-16 m-0">
             {%- for entry in navPages %}
-              {% if entry.url !== page.url %}
-                <li>
-                  <a href="{{ entry.url }}">{{ entry.title }}</a>
-                </li>
-              {% endif %}
+              <li>
+                <a href="{{ entry.url }}">{{ entry.title }}</a>
+              </li>
             {%- endfor %}
           </ul>
         </nav>

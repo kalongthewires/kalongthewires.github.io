@@ -3,10 +3,18 @@
 :root {
   --color-white: #fefefe;
   --color-black: #000000;
+  --color-cobalt: #2a5aba;
+  --color-teal: #00bcd4;
+  --color-orange: #ff9800;
+  --color-indigo: #3f51b5;
+  --color-dark-blue: #083796;
+  --color-red: #ff0000;
+  --color-light-blue: #7ba4f7;
+  --color-light-gray: #f2f2f2;
 }
 
 body {
-  background-color: #2a5aba;
+  background-color: var(--color-cobalt);
   line-height: 1.5;
 }
 
@@ -17,6 +25,30 @@ h4,
 h5,
 h6 {
   margin: 0;
+}
+
+blockquote {
+  background-color: var(--color-light-gray);
+  border-left: 4px solid var(--color-teal);
+  border-radius: 0.25rem;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 640px) {
+  blockquote {
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+  }
+}
+
+blockquote p {
+  margin-bottom: 0;
+}
+
+cite {
+  font-style: normal;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .bg-white {
@@ -54,6 +86,14 @@ ul {
 
 .m-0 {
   margin: 0;
+}
+.my-0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.mx-0 {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .mb-8 {
@@ -93,6 +133,9 @@ ul {
   padding-bottom: 3rem;
 }
 
+.mt-0 {
+  margin-top: 0;
+}
 .mt-8 {
   margin-top: 0.5rem;
 }
@@ -160,6 +203,9 @@ ul {
   padding-inline-start: 3rem;
 }
 
+.ms-4 {
+  margin-inline-start: 0.25rem;
+}
 .ms-8 {
   margin-inline-start: 0.5rem;
 }
@@ -284,6 +330,10 @@ ul {
 
 .no-underline {
   text-decoration: none;
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 .text-black {

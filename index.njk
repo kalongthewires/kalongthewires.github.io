@@ -7,10 +7,8 @@ eleventyNavigation:
 ---
 
 {% for post in collections.posts %}
+    <h2 class="font-semibold">{{ post.data.title }}</h2>
+    <p class="mb-24 mt-0">{{ post.date | postDate }}</p>
 
-  <h2 class="font-semibold mb-16">{{ post.title }}</h2>
-  <p class="mb-32">{{ post.data.date }}</p>
-
-  {{ post.templateContent | safe }}
-    
+    {{ post.templateContent | safe }}
 {% endfor %}

@@ -1,12 +1,3 @@
-:root {
-  --color-teal: #00bcd4;
-  --color-orange: #ff9800;
-  --color-indigo: #3f51b5;
-  --color-dark-blue: #083796;
-  --color-red: #ff0000;
-  --color-light-blue: #7ba4f7;
-}
-
 .pixel-container {
   position: absolute;
   top: -5em;
