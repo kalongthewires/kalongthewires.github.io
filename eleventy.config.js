@@ -1,3 +1,5 @@
+import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
+
 const groupByMonth = (values) => {
   const grouped = values.reduce((years, value) => {
     const date = new Date(value.date);
@@ -60,6 +62,7 @@ export default function (eleventyConfig) {
       year: "numeric",
     });
   });
-
   eleventyConfig.addFilter("groupByMonth", groupByMonth);
+
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
 }

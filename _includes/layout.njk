@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ title }}</title>
+    <title>starting somewhere - {{ title }}</title>
     <link rel="stylesheet" href="/bundle.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,11 +15,25 @@
   <body class="font-sans font-normal my-48">
     <div class="pixel-bg"></div>
     <div class="container mx-auto border bg-white mt-24 relative">
-      <header class="border-b mb-24 px-24 py-16 relative">
+      <header class="mb-24 relative">
         <div class="pixel-container">
           <div class="pixels"></div>
         </div>
-        <h1 class="text-2xl ms-64 font-semibold">{{ title }}</h1>
+        <h1 class="text-2xl ms-64 px-24 font-semibold py-16">
+          <a class="no-underline text-black" href="/">starting somewhere</a>
+        </h1>
+        <nav class="px-24 border-t pt-16 mb-32">
+          {% set navPages = collections.all | eleventyNavigation %}
+          <ul class="flex gap-16 m-0">
+            {%- for entry in navPages %}
+              {% if entry.url !== page.url %}
+                <li>
+                  <a href="{{ entry.url }}">{{ entry.title }}</a>
+                </li>
+              {% endif %}
+            {%- endfor %}
+          </ul>
+        </nav>
       </header>
       <main class="px-24 pb-16">{{ content | safe }}</main>
       <div class="pixel-container-bottom">

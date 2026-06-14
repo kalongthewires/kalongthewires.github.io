@@ -1,0 +1,22 @@
+---
+layout: layout.njk
+title: media log
+eleventyNavigation:
+  key: media
+  title: media log
+---
+
+{% for year in media | groupByMonth %}
+  <h2 class="font-semibold mb-16">{{ year.year }}</h2>
+    
+  {% for month in year.months %}
+    <h3 class="mt-32">{{ month.month }}</h3>
+
+    <ol class="list-decimal">
+      {% for item in month.items %}
+      <li>{{ item.name }} {%if item.creator %} - {{ item.creator }}{% endif %} ({{ item.type }})</li>
+      {% endfor %}
+    </ol>      
+  {% endfor %}
+
+{% endfor %}
