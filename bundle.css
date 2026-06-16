@@ -47,8 +47,17 @@ blockquote p {
 
 cite {
   font-style: normal;
-  display: flex;
-  justify-content: flex-end;
+}
+
+em {
+  font-style: normal;
+  font-weight: 700;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .bg-white {
@@ -306,6 +315,10 @@ ul {
 
 .flex {
   display: flex;
+}
+
+.justify-end {
+  justify-content: flex-end;
 }
 
 .gap-16 {

@@ -3,12 +3,15 @@ layout: layout.njk
 title: margins
 eleventyNavigation:
   key: home
+  title: margins
   order: 1
 ---
 
-{% for post in collections.posts %}
-    <h2 class="font-semibold">{{ post.data.title }}</h2>
-    <p class="mb-24 mt-0">{{ post.date | postDate }}</p>
+{% for post in collections.posts | reverse %}
+<div class="my-48">
+  <h2 class="font-semibold">{{ post.data.title }}</h2>
+  <p class="mb-24 mt-0">{{ post.date | postDate }}</p>
 
-    {{ post.templateContent | safe }}
+  {{ post.templateContent | safe }}
+</div>
 {% endfor %}

@@ -1,4 +1,5 @@
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 const groupByMonth = (values) => {
   const grouped = values.reduce((years, value) => {
@@ -65,4 +66,18 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("groupByMonth", groupByMonth);
 
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    formats: ["avif", "webp", "auto"],
+
+    failOnError: false,
+
+    widths: [512, 1024],
+
+    htmlOptions: {
+      imgAttributes: {
+        loading: "lazy",
+        decoding: "async",
+      },
+    },
+  });
 }

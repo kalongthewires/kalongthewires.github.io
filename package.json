@@ -11,7 +11,8 @@
     "build": "npx @11ty/eleventy",
     "build-ghpages": "npx @11ty/eleventy --pathprefix=/kalongthewires.github.io/"
   },
-  "dependencies": {
+  "devDependencies": {
+    "@11ty/eleventy-img": "^6.0.4",
     "@11ty/eleventy-navigation": "^1.0.5"
   }
 }
